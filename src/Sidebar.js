@@ -1,4 +1,4 @@
-function Sidebar({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}){
+function Sidebar({notes, onAddNote, onDeleteNote, activeNote, setActiveNote, setSearchText}){
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified)
 
   return (
@@ -6,6 +6,9 @@ function Sidebar({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}){
     <div className="app-sidebar-header">
       <h1>Notes</h1>
       <button onClick={onAddNote}>Add</button>
+    </div>
+    <div className="search">
+      <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search" />
     </div>
     <div className="app-sidebar-notes">
       {sortedNotes.map((note)=>(

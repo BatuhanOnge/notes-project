@@ -46,10 +46,30 @@ button:hover {
 .app-sidebar-header {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .app-sidebar-header h1 {
   margin: 0;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  padding: 8px;
+  border-radius: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.search input{
+  border: none;
+  background-color: rgb(233, 233, 233);
+}
+.search input:focus{
+  outline: none;
 }
 
 .app-sidebar-notes {
@@ -88,11 +108,10 @@ button:hover {
 
 .app-main {
   width: 70%;
-  height: 100vh;
+  height: 100%;
 }
-.app-main-note-edit,
-.app-main-note-preview {
-  height: 50vh;
+.app-main-note-edit{
+  height: 100%;
 }
 
 .no-active-note {
@@ -112,10 +131,10 @@ button:hover {
 .app-main-note-edit input,
 textarea {
   display: block;
-  border: 1px solid #ddd;
+  border: none;
   margin-bottom: 20px;
   width: 100%;
-  height: calc(50vh - 130px);
+  height: 90%;
   padding: 10px;
   resize: none;
   font-size: inherit;
@@ -126,20 +145,9 @@ textarea {
   font-size: 2rem;
 }
 
-/* Preview */
-.app-main-note-preview {
-  border-top: 1px solid #ddd;
-  overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.02);
+.app-main-note-edit input:focus{
+  outline: none;
 }
-
-.preview-title {
-  padding: 25px 25px 0 25px;
-  margin: 0;
-}
-
-.markdown-preview {
-  padding: 0 25px 25px 25px;
-  font-size: 1rem;
-  line-height: 2rem;
+textarea{
+  outline: none;
 }

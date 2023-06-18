@@ -12,6 +12,8 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(notes))
   }, [notes]);
 
+  const [searchText, setSearchText] = useState('');
+
   const onAddNote = () =>{
     const newNote = {
       id: uuid(),
@@ -47,11 +49,12 @@ function App() {
     <div className="App">
 
       <Sidebar 
-      notes={notes} 
+      notes={notes.filter((note) => note.body.toLowerCase().includes(searchText))} 
       onAddNote={onAddNote} 
       onDeleteNote={onDeleteNote} 
       activeNote={activeNote}
       setActiveNote={setActiveNote}
+      setSearchText={setSearchText}
       />
       
       <Main 
