@@ -1,5 +1,3 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown"
-
 function Main({activeNote, onUpdateNote}){
   const onEditField = (key, value) =>{
     onUpdateNote({
