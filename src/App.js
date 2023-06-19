@@ -7,12 +7,11 @@ import Sidebar from './Sidebar';
 function App() {
   const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
   const [activeNote, setActiveNote] = useState(false);
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes))
   }, [notes]);
-
-  const [searchText, setSearchText] = useState('');
 
   const onAddNote = () =>{
     const newNote = {
